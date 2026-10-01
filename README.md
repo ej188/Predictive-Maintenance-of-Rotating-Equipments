@@ -36,11 +36,21 @@ This is an independently written, anonymized portfolio account based on my inter
 
 ## Conceptual workflow
 
-1. Integrate telemetry and maintenance history; check time alignment and data quality.
-2. Identify operating states and maintenance-related cycles.
-3. Compare against a healthy reference and construct temporal features.
-4. Develop complementary RUL regression strategies.
-5. Examine overall and near-failure performance; communicate engineering findings and validation priorities.
+```mermaid
+flowchart LR
+    A[Sensor telemetry] --> C[Time alignment and quality checks]
+    B[Maintenance history] --> C
+    C --> D[Operating states and cycles]
+    D --> E[Healthy-reference comparison and temporal features]
+    E --> F[Cross-cycle regression]
+    E --> G[Current-cycle regression]
+    F --> H[Combined RUL estimate]
+    G --> H
+    H --> I[Overall and near-failure evaluation]
+    I --> J[Findings and validation priorities]
+```
+
+Conceptual reconstruction of the workflow described in this portfolio. This is not an internal architecture diagram and contains no operational identifiers or implementation details.
 
 This summarizes the work at a general level. Using only information available at prediction time is a required validation principle; the source summary does not verify that every original feature met it.
 
@@ -53,6 +63,10 @@ This account makes no claim of production deployment, verified warning lead time
 ## A small, reproducible evaluation example
 
 The [synthetic example](examples/README.md) demonstrates why overall MAE can obscure errors in the final part of a lifecycle. It uses invented values and Python's standard library; it does not train a model or reproduce company results.
+
+![Wholly synthetic comparison of overall and retrospective reference-target slice errors](examples/figures/synthetic-evaluation-slices.png)
+
+The figure uses arbitrary units and the same invented fixture as the script below. Its purpose is to explain evaluation slicing, not to report internship performance. The small near-end slice has greater positive error; the overall average conceals that behavior. Slice membership uses a retrospective reference target, not an inference-time decision rule.
 
 ```bash
 python3 examples/evaluation_slices.py

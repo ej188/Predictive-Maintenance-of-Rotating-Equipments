@@ -15,11 +15,16 @@ def metrics(rows):
     return len(rows), mean(abs(e) for e in errors), sqrt(mean(e * e for e in errors)), mean(errors)
 
 
-def main():
+def invented_rows():
+    """Return the shared, wholly invented educational fixture."""
     # Deliberately imbalanced, wholly invented retrospective observations.
     early = [(10.0 + i / 10.0, 10.5 + i / 10.0) for i in range(90)]
     near_end = [(i / 3.0, 9.5) for i in range(10)]
-    rows = early + near_end
+    return early + near_end
+
+
+def main():
+    rows = invented_rows()
     slices = {
         "overall": rows,
         "reference > 3": [row for row in rows if row[0] > 3.0],

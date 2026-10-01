@@ -22,3 +22,17 @@ Weighted-MAE decomposition: verified.
 ```
 
 These illustrative values are deliberately chosen and support no empirical conclusion. Slice membership uses a retrospective reference target, which may be unavailable at inference time. A deployed alert must operate on information available when the decision is made.
+
+## Optional plot
+
+![Synthetic error-slice comparison](figures/synthetic-evaluation-slices.png)
+
+The plot uses the same `invented_rows()` fixture as the standard-library example. Both axes use arbitrary reference-target units; no company values, image pixels, timestamps, or internal results are used. MAE and mean signed error coincide here because all deliberately invented errors are positive. This is a teaching example, not evidence of model accuracy or operational safety.
+
+To regenerate the figure, install the optional `matplotlib` dependency (the published figure was rendered with version 3.10.1), then run:
+
+```bash
+python3 examples/plot_evaluation_slices.py
+```
+
+The conceptual README diagram is also an independently authored reconstruction at a generic level, not an internal architecture artifact.
