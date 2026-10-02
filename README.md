@@ -8,7 +8,7 @@ An internship project connecting industrial telemetry and maintenance history to
 
 **The central lesson:** agreement with a constructed RUL reference target does not establish reliable failure prediction. Evaluating the period closest to failure exposed weaknesses that overall metrics concealed.
 
-This is an independently written, anonymized portfolio account based on my internship summary. It contains no company datasets, source code, model artifacts, maintenance records, internal slides, or operational identifiers. The implementation and results cannot be independently reproduced from this repository. The optional synthetic example is a new educational artifact created for this portfolio, separate from the internship implementation.
+This is an independently written, anonymized portfolio account based on my internship summary. The two figures below preserve retrospective relationships from the original proof of concept, with internal feature labels removed and reference-target wording corrected. Raw datasets, internal code, model artifacts, maintenance records, slides, and operational identifiers are excluded. The original implementation and results cannot be independently reproduced from this repository.
 
 ## Work at a glance
 
@@ -29,8 +29,20 @@ This is an independently written, anonymized portfolio account based on my inter
 2. Build temporal features and RUL regression models.
 3. Evaluate errors, especially near failure.
 
+## Modeling and evaluation figures
+
+![Retrospective feature importance with anonymized feature labels](docs/figures/feature-importance-anonymized.png)
+
+**Feature importance.** Generic labels A–H replace internal channel names. The original rankings, bar lengths, and numerical scale are retained. This is a retrospective, model-specific ranking; it does not establish causal influence or feature stability across assets. The exact importance estimator has not been independently verified.
+
+![Predicted RUL versus the constructed RUL reference](docs/figures/rul-reference-comparison.png)
+
+**Predicted versus reference RUL.** Points and scales are unchanged from the original figure. The x-axis represents a constructed RUL reference, not independently verified true remaining life. Overprediction is visible where reference values are low, reinforcing the need to evaluate near-failure behavior separately. This comparison does not establish prospective failure prediction or an operational warning horizon.
+
+The figures retain original retrospective results; they are not synthetic. Label redaction does not remove those numerical relationships. [Publication scope and provenance](docs/disclosure.md) document the distinction.
+
 ## Achievements and boundaries
 
 I delivered an integrated analytical foundation, identified a promising vibration-based degradation indicator, developed a complementary set of regression strategies, and communicated limitations and data-improvement priorities. Retrospective results showed that performance weakened near failure, including overprediction of the reference RUL.
 
-This account makes no claim of production deployment, verified warning lead time, reduced downtime, cost savings, or measured improvement from the LLM contribution. Internal numerical results and event details are intentionally omitted. The project is best understood as a prototype and an exercise in evidence-driven evaluation.
+This account makes no claim of production deployment, verified warning lead time, reduced downtime, cost savings, or measured improvement from the LLM contribution. Apart from the relationships visible in the two figures above, internal numerical summaries and event details are omitted. The project is best understood as a prototype and an exercise in evidence-driven evaluation.
