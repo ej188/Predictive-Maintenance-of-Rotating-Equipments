@@ -47,6 +47,22 @@ prediction_C(t) = w(t) * prediction_A(t) + (1-w(t)) * prediction_B(t)
 
 This expression illustrates a two-predictor mixture. The original adaptive rule is not disclosed or independently verified.
 
+## Illustrative model blending
+
+![Invented model-blending weights and estimates](figures/illustrative-model-blending.png)
+
+The left panel shows invented complementary weights summing to one. The right panel shows their weighted combination of two invented RUL estimates. The combined value stays between those estimates. Increasing the current-cycle weight is an educational choice here, not a verified original weighting rule or a recommendation that weights should always evolve this way. Illustrative cycle progress is not evidence that true remaining life is available at prediction time.
+
+No company measurements, timelines, image pixels, or model outputs are used. This figure illustrates the general mixture expression above; it does not establish accuracy or operational validity.
+
+To regenerate it, install the optional `matplotlib` dependency (rendered with version 3.10.1), then run:
+
+```bash
+python3 examples/plot_model_blending.py
+```
+
+The generator checks that weights sum to one and that each combined estimate lies between its two component estimates.
+
 ## Target validity
 
 A reference RUL target is a modeling label, not a direct observation of the equipment's true remaining lifetime. If the target depends on a health index also represented in the features, a model can learn that construction without learning physical failure behavior. If it uses a recorded event endpoint, the endpoint must be interpreted: inspection, planned repair, and failure are not interchangeable outcomes.

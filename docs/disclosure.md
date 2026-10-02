@@ -17,7 +17,7 @@ Anonymization reduces exposure but does not itself establish permission to discl
 | Two original figure treatments | Author-approved originals with permanent label replacement; plot pixels preserved | Underlying results retained; no independent reproduction, target verification, or importance-estimator verification |
 | Mathematical explanations | Newly authored general explanations | Not recovered original formulas |
 | Validation plans and generic data contract | Newly authored recommendations | Proposed, not completed internship work |
-| Synthetic example | Invented numeric fixture | Educational; no relationship to company measurements |
+| Synthetic examples and model-blending illustration | Invented numeric fixture, curves, and weighting rule | Educational; no relationship to company measurements or the original blending algorithm |
 | Folder conventions | Linked public AI-lab repositories | Structural inspiration; no confidentiality certification |
 
 ## Excluded claims

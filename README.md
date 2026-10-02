@@ -8,7 +8,7 @@ An internship project connecting industrial telemetry and maintenance history to
 
 **The central lesson:** agreement with a constructed RUL reference target does not establish reliable failure prediction. Evaluating the period closest to failure exposed weaknesses that overall metrics concealed.
 
-This is an independently written, anonymized portfolio account based on my internship summary. The two figures below preserve retrospective relationships from the original proof of concept, with internal feature labels removed and reference-target wording corrected. Raw datasets, internal code, model artifacts, maintenance records, slides, and operational identifiers are excluded. The original implementation and results cannot be independently reproduced from this repository.
+This is an independently written, anonymized portfolio account based on my internship summary. The two retrospective figures below preserve relationships from the original proof of concept, with internal feature labels removed and reference-target wording corrected. Raw datasets, internal code, model artifacts, maintenance records, slides, and operational identifiers are excluded. The original implementation and results cannot be independently reproduced from this repository.
 
 ## Work at a glance
 
@@ -40,6 +40,12 @@ This is an independently written, anonymized portfolio account based on my inter
 **Predicted versus reference RUL.** Points and scales are unchanged from the original figure. The x-axis represents a constructed RUL reference, not independently verified true remaining life. Overprediction is visible where reference values are low, reinforcing the need to evaluate near-failure behavior separately. This comparison does not establish prospective failure prediction or an operational warning horizon.
 
 The figures retain original retrospective results; they are not synthetic. Label redaction does not remove those numerical relationships. [Publication scope and provenance](docs/disclosure.md) document the distinction.
+
+### Model blending (illustrative)
+
+![Synthetic illustration of historical-cycle and current-cycle model blending](docs/figures/illustrative-model-blending.png)
+
+This independently created illustration shows how changing mixture weights can combine historical-cycle and current-cycle estimates. All curves and the weighting rule are invented; the figure does not reproduce the internship algorithm or its performance. See the [modeling methodology](docs/methodology.md#illustrative-model-blending) for interpretation and regeneration instructions.
 
 ## Achievements and boundaries
 

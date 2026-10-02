@@ -36,3 +36,13 @@ python3 examples/plot_evaluation_slices.py
 ```
 
 The conceptual README diagram is also an independently authored reconstruction at a generic level, not an internal architecture artifact.
+
+## Model-blending illustration
+
+An additional [synthetic model-blending figure](../docs/figures/illustrative-model-blending.png) illustrates a two-predictor mixture with wholly invented estimates and weights. It uses no company data or original image pixels. The rule is not the original adaptive algorithm and makes no performance claim.
+
+With the optional matplotlib dependency installed, regenerate it with:
+
+```bash
+python3 examples/plot_model_blending.py
+```
