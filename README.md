@@ -23,76 +23,14 @@ This is an independently written, anonymized portfolio account based on my inter
 | Communication | Presented the proof of concept to C-suite and global reliability and maintenance leaders; recommended stronger records, timestamp alignment, and broader validation | Explained technical findings and validation priorities to senior decision-makers |
 | Applied LLM work | Refined classification prompts for a separate enterprise message-filtering workflow | Applied prompt engineering to an operational use case |
 
-## Start here
-
-- [Project narrative and ownership](docs/project-overview.md): problem, contributions, and outcomes.
-- [Data and architecture](docs/data-and-architecture.md): data preparation, provenance, and operating context.
-- [Modeling approach](docs/methodology.md): features, reference targets, and prediction strategies.
-- [Evaluation and limitations](docs/evaluation.md): the distinction between retrospective fit and decision usefulness.
-- [Technical decisions](docs/decisions.md): observed choices, tradeoffs, and questions still open.
-- [Skills and evidence](docs/skills-and-evidence.md): where to inspect my reasoning for applied science and engineering roles.
-- [LLM contribution](docs/llm-workflow.md): scope of the secondary project.
-- [Confidentiality and provenance](docs/disclosure.md): publication boundaries and claim status.
-
 ## Conceptual workflow
 
-```mermaid
-flowchart LR
-    A[Sensor telemetry] --> C[Time alignment and quality checks]
-    B[Maintenance history] --> C
-    C --> D[Operating states and cycles]
-    D --> E[Healthy-reference comparison and temporal features]
-    E --> F[Cross-cycle regression]
-    E --> G[Current-cycle regression]
-    F --> H[Combined RUL estimate]
-    G --> H
-    H --> I[Overall and near-failure evaluation]
-    I --> J[Findings and validation priorities]
-```
-
-Conceptual reconstruction of the workflow described in this portfolio. This is not an internal architecture diagram and contains no operational identifiers or implementation details.
-
-This summarizes the work at a general level. Using only information available at prediction time is a required validation principle; the source summary does not verify that every original feature met it.
+1. Combine sensor readings and maintenance history.
+2. Build temporal features and RUL regression models.
+3. Evaluate errors, especially near failure.
 
 ## Achievements and boundaries
 
 I delivered an integrated analytical foundation, identified a promising vibration-based degradation indicator, developed a complementary set of regression strategies, and communicated limitations and data-improvement priorities. Retrospective results showed that performance weakened near failure, including overprediction of the reference RUL.
 
 This account makes no claim of production deployment, verified warning lead time, reduced downtime, cost savings, or measured improvement from the LLM contribution. Internal numerical results and event details are intentionally omitted. The project is best understood as a prototype and an exercise in evidence-driven evaluation.
-
-## A small, reproducible evaluation example
-
-The [synthetic example](examples/README.md) demonstrates why overall MAE can obscure errors in the final part of a lifecycle. It uses invented values and Python's standard library; it does not train a model or reproduce company results.
-
-![Wholly synthetic comparison of overall and retrospective reference-target slice errors](examples/figures/synthetic-evaluation-slices.png)
-
-The figure uses arbitrary units and the same invented fixture as the script below. Its purpose is to explain evaluation slicing, not to report internship performance. The small near-end slice has greater positive error; the overall average conceals that behavior. Slice membership uses a retrospective reference target, not an inference-time decision rule.
-
-```bash
-python3 examples/evaluation_slices.py
-```
-
-Check the public documentation's local links and prohibited artifact types:
-
-```bash
-python3 scripts/check_repository.py
-```
-
-## Repository map
-
-```text
-README.md
-docs/                    Technical narrative, evaluation, evidence, and disclosure
-examples/                Clearly labeled synthetic educational example
-scripts/                 Documentation and artifact checks
-.github/                 Review template
-CONTRIBUTING.md           Rules for safe, evidence-backed changes
-SECURITY.md               Handling accidental disclosure
-.gitignore               Exclusions for private and generated artifacts
-```
-
-## Documentation conventions
-
-The structure adapts a few public conventions: a clear README entry point and discoverable examples from the [OpenAI Cookbook](https://github.com/openai/openai-cookbook); topic-oriented navigation and contributor guidance from [Anthropic's Claude Cookbooks](https://github.com/anthropics/claude-cookbooks); and separate documentation from [Google DeepMind's WeatherNext repository](https://github.com/google-deepmind/weathernext). This portfolio is independently authored and has no affiliation with or endorsement from those organizations.
-
-No open-source license has been selected. This repository does not grant rights to any employer-owned material.
